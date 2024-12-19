@@ -2,7 +2,7 @@ class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
   url "https://github.com/hashicorp/terraform/archive/refs/tags/v1.10.3.tar.gz"
-  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  sha256 "cd721c5c9fa192549680c71f3bf5b715cfb283311800af2e8d44bb4edc26a1d8"
   head "https://github.com/hashicorp/terraform.git", branch: "main"
 
   depends_on "go" => :build
