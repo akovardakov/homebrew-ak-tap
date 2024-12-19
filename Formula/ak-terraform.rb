@@ -2,23 +2,12 @@ class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
   url "https://github.com/hashicorp/terraform/archive/refs/tags/v1.10.3.tar.gz"
-  sha256 "6742fc87cba5e064455393cda12f0e0241c85a7cb2a3558d13289380bb5f26f5"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   head "https://github.com/hashicorp/terraform.git", branch: "main"
-
-  bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "87e8faf4dc4090ff8259a2cc258ac20518c154989af694475a3105d5ad57d664"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82a9dcb1351fa533ea106fe0222678c89814a42ce4939d17c01178f4dbff4713"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9f647f7ab0dc2c8878c6f4ab51bcd412197bc02e30389b15cc37de2b0dfaf8b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b14e9ffc5a5d154e5d6b58b94c18372c2f69c5ce1fd5735b351c1a1bac0187f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ce38d4ffe85f9530ba5911299d190f0a119610c4fd9fc6b30f57871647b61cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "f68fee2494570a785d854056484c6853421e592a7e58489bfdc692ef87913412"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8cef4d46451e2780754cdf5c5510b8ed458025668a03beb1dd69c23b61396ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "390afc2492fa4ea2fc7dce55efa25b9ae09e060639e1dc3d9c160718893881b3"
-  end
 
   depends_on "go" => :build
 
+  conflicts_with "terraform", because: "older version in hombrew repo"
   conflicts_with "tenv", because: "both install terraform binary"
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
 
